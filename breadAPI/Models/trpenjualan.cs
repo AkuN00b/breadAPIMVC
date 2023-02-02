@@ -11,5 +11,7 @@ namespace breadAPI.Models
         public DateTime pen_waktu { get; set; } = DateTime.Now;
         public int pen_bayar { get; set; }
         public int pen_kembali { get; set; }
+
+        //public IEnumerable<msobat>? msobats { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace breadAPI.Models
 {
@@ -6,7 +7,9 @@ namespace breadAPI.Models
     {
         [Key]
         public int pde_id { get; set; }
+        [ForeignKey("trpenjualan")]
         public int pen_id { get; set; }
+        [ForeignKey("msobat")]
         public int oba_id { get; set; }
         public string pde_kode { get; set; }
         public string pde_nama { get; set; }
