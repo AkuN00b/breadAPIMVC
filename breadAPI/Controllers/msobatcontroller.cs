@@ -26,7 +26,7 @@ namespace breadAPI.Controllers
             return Ok(msobats);
         }
 
-        [HttpPost("Create/")]
+        [HttpPost("Create")]
         public async Task<ActionResult<msobat>> CreateObat(msobat msobats)
         {
             _db.msobat.Add(msobats);

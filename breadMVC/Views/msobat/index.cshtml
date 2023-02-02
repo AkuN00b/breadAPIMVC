@@ -1,0 +1,55 @@
+﻿@model IEnumerable<msobat>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>index obat</p>
+
+<span class="float-end mt-3 mb-3">
+    <a class="btn btn-success" asp-controller="msobat" asp-action="Create"><i class="fa-solid fa-plus"></i> Tambah Data</a>
+</span>
+
+<table class="table table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kode</th>
+            <th>Nama</th>
+            <th>HArga</th>
+            <th>Kuantitas</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+                <tr><td colspan="7">Tidak ada data</td></tr>
+        }
+        else
+        {
+            @foreach (var obj in Model)
+            {
+                        <tr>
+                            <td>@obj.oba_id</td>
+                            <td>@obj.oba_kode</td>
+                            <td>@obj.oba_nama</td>
+                            <td>@obj.oba_harga</td>
+                            <td>@obj.oba_quantity</td>
+                            <td>@obj.oba_status</td>
+                            <td>
+                                @if (@obj.oba_status.Equals("Tidak Ada")) {
+                                    <p>Status Tidak Ada</p>
+                                } else {
+                                                   <a asp-action="Edit" class="btn btn-warning" asp-route-id="@obj.oba_id"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@obj.oba_id"><i class="fa-solid fa-trash"></i>Delete </a>
+                                }
+                                
+                            </td>
+                        </tr>   
+            }
+        }
+    </tbody>
+</table>

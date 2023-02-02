@@ -1,0 +1,32 @@
+﻿@model breadMVC.Models.msobat
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>create obat</p>
+
+<form method="post" class="mt-4">
+    <div class="mb-3">
+        <label for="" class="form-label">kode</label>
+        <input type="text" class="form-control" asp-for="oba_kode">
+        <span asp-validation-for="oba_kode" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">nama</label>
+        <input type="text" class="form-control" asp-for="oba_nama">
+        <span asp-validation-for="oba_nama" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">harga</label>
+        <input type="number" class="form-control" asp-for="oba_harga">
+        <span asp-validation-for="oba_harga" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">kuantitas</label>
+        <input type="number" class="form-control" asp-for="oba_quantity">
+        <span asp-validation-for="oba_quantity" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-block" ><i class="fa-regular fa-floppy-disk"></i> Submit</button>
+</form>

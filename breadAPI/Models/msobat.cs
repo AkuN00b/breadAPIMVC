@@ -11,6 +11,6 @@ namespace breadAPI.Models
         public string oba_nama { get; set; }
         public int oba_harga { get; set; }
         public int oba_quantity { get; set; }
-        public string oba_status { get; set; }
+        public string? oba_status { get; set; } = "Ada";
     }
 }
